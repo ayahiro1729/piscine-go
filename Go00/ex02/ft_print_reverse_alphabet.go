@@ -1,19 +1,17 @@
 package main
 
-import (
-	"bufio"
-	"os"
-)
+import "os"
+
+func ft_putchar(c byte) {
+	os.Stdout.Write([]byte{c})
+}
 
 func ft_print_alphabet() {
-	var buffer *bufio.Writer
 	var c byte
 
-	buffer = bufio.NewWriter(os.Stdout)
 	c = 'z'
 	for c >= 'a' {
-		buffer.WriteByte(c)
-		buffer.Flush()
+		ft_putchar(c)
 		c--
 	}
 }

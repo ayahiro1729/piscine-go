@@ -1,29 +1,25 @@
 package main
 
-import (
-	"bufio"
-	"os"
-)
+import "os"
+
+func ft_putchar(c byte) {
+	os.Stdout.Write([]byte{c})
+}
 
 func ft_print_comb() {
-	var buffer *bufio.Writer
 	var i byte
 	var j byte
 	var k byte
 
-	buffer = bufio.NewWriter(os.Stdout)
 	i = '0'
 	for i < '6' {
 		j = i + 1
 		for j < '8' {
 			k = j + 1
 			for k < '9' {
-				buffer.WriteByte(i)
-				buffer.Flush()
-				buffer.WriteByte(j)
-				buffer.Flush()
-				buffer.WriteByte(k)
-				buffer.Flush()
+				ft_putchar(i)
+				ft_putchar(j)
+				ft_putchar(k)
 				os.Stdout.Write([]byte(", "))
 				k++
 			}
